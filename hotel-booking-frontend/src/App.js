@@ -11,7 +11,6 @@ import RoomSelectionPage from './pages/RoomSelectionPage';
 import CheckoutPage from './pages/CheckoutPage';
 import ConfirmingPage from './pages/ConfirmingPage';
 import ConfirmationPage from './pages/ConfirmationPage';
-import LatestBookingRedirect from './pages/LatestBookingRedirect';
 import LoginPage from './pages/LoginPage';
 import GuestLoginPage from './pages/GuestLoginPage';
 import GuestRegisterPage from './pages/GuestRegisterPage';
@@ -241,7 +240,6 @@ function AppContent() {
     '/checkout',
     '/confirming',
     '/confirmation',
-    '/latest-booking',
     '/my-bookings',
     '/booking',
     '/invoice',
@@ -308,7 +306,6 @@ function AppContent() {
           <Route path="/confirmation/:reference" element={<ConfirmationPage />} />
           
           {/* Helper: Latest Booking Redirect (for testing) */}
-          <Route path="/latest-booking" element={<LatestBookingRedirect />} />
 
           {/* Page 7: Guest Login/Register - NEW SEPARATE PAGES */}
           <Route path="/login" element={<GuestLoginPage />} />

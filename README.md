@@ -112,7 +112,7 @@ php artisan schedule:work
 
 On Windows you can use `run-scheduler.bat` with Task Scheduler instead.
 
-To receive Stripe webhooks locally, use the [Stripe CLI](https://stripe.com/docs/stripe-cli):
+Bookings are only confirmed when Stripe's webhook reaches the backend, so forward webhooks locally with the [Stripe CLI](https://stripe.com/docs/stripe-cli) and put the `whsec_...` secret it prints into `STRIPE_WEBHOOK_SECRET`:
 
 ```bash
 stripe listen --forward-to 127.0.0.1:8000/api/webhooks/stripe

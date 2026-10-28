@@ -33,61 +33,9 @@ const ConfirmingPage = () => {
       return;
     }
 
-    // TEST MODE: Auto-confirm booking for local development
-    if (process.env.NODE_ENV === 'development') {
-      autoConfirmBooking();
-    } else {
-      // Start polling for payment confirmation
-      pollPaymentStatus();
-    }
+    // Start polling for payment confirmation
+    pollPaymentStatus();
   }, [payment_intent_id]);
-
-  /**
-   * TEST MODE: Auto-confirm booking (for local dev without webhooks)
-   * In production, webhooks handle this automatically
-   */
-  const autoConfirmBooking = async () => {
-    try {
-      setMessage('Auto-confirming booking (TEST MODE)...');
-      
-      // Trigger test endpoint to confirm booking
-      const response = await fetch(`http://127.0.0.1:8000/api/test/auto-confirm/${payment_intent_id}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' }
-      });
-      
-      const data = await response.json();
-      
-      if (data.success) {
-        // Wait a moment then poll to confirm
-        setTimeout(() => {
-          pollPaymentStatus();
-        }, 1000);
-      } else if (data.validation_failed) {
-        // Validation failed - show appropriate error
-        setStatus('failed');
-        
-        if (data.price_validation_failed) {
-          // Price changed
-          setMessage(`Price changed during checkout. Original: $${data.original_amount}, New: $${data.current_amount}.`);
-        } else {
-          // Room unavailable
-          setMessage('Room is no longer available.');
-        }
-        
-        setTimeout(() => {
-          navigate('/', { replace: true });
-        }, 6000);
-      } else {
-        // Other errors - fallback to normal polling
-        pollPaymentStatus();
-      }
-    } catch (error) {
-      console.error('Auto-confirm error:', error);
-      // Fallback to normal polling
-      pollPaymentStatus();
-    }
-  };
 
   /**
    * Poll backend for payment status
