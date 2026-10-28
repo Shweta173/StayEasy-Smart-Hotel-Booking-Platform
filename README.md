@@ -1,6 +1,6 @@
-# Hotel Booking Platform
+# StayEasy - Smart Hotel Booking Platform
 
-A full-stack hotel booking platform. Guests can search properties, check room availability, hold rooms, and pay with Stripe. Hotel staff use a role-based admin panel to manage properties, rooms, pricing, bookings, invoices and reviews.
+StayEasy is a full-stack hotel booking platform. Guests can search properties, check room availability, hold rooms, and pay with Stripe. Hotel staff use a role-based admin panel to manage properties, rooms, pricing, bookings, invoices and reviews.
 
 The project has two apps:
 
