@@ -46,7 +46,7 @@ The project has two apps:
 ## Project structure
 
 ```
-hotel-booking-platform/
+StayEasy-Smart-Hotel-Booking-Platform/
 ├── hotel_booking/                 # Laravel backend
 │   ├── app/
 │   │   ├── Console/Commands/      # bookings:expire-holds, email test commands
