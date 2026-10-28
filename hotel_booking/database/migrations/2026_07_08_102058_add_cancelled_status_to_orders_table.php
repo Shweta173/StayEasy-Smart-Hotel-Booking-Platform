@@ -1,0 +1,18 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\DB;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        // MySQL: modify the enum to add 'cancelled'
+        DB::statement("ALTER TABLE orders MODIFY COLUMN status ENUM('pending','paid','failed','refunded','cancelled') NOT NULL DEFAULT 'pending'");
+    }
+
+    public function down(): void
+    {
+        DB::statement("ALTER TABLE orders MODIFY COLUMN status ENUM('pending','paid','failed','refunded') NOT NULL DEFAULT 'pending'");
+    }
+};
