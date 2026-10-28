@@ -1,0 +1,74 @@
+# Root level gitignore for Hotel Booking Platform
+
+# Backend Laravel ignores
+hotel_booking/node_modules/
+hotel_booking/vendor/
+hotel_booking/.env
+hotel_booking/.env.backup
+hotel_booking/.env.production
+hotel_booking/public/hot
+hotel_booking/public/storage
+hotel_booking/storage/*.key
+hotel_booking/storage/framework/cache/*
+!hotel_booking/storage/framework/cache/.gitignore
+hotel_booking/storage/framework/sessions/*
+!hotel_booking/storage/framework/sessions/.gitignore
+hotel_booking/storage/framework/views/*
+!hotel_booking/storage/framework/views/.gitignore
+hotel_booking/storage/logs/*
+!hotel_booking/storage/logs/.gitignore
+hotel_booking/storage/debugbar/*
+!hotel_booking/storage/debugbar/.gitignore
+hotel_booking/.phpunit.result.cache
+hotel_booking/Homestead.json
+hotel_booking/Homestead.yaml
+hotel_booking/auth.json
+hotel_booking/npm-debug.log
+hotel_booking/yarn-error.log
+
+# Frontend React ignores
+hotel-booking-frontend/node_modules/
+hotel-booking-frontend/build/
+hotel-booking-frontend/.env
+hotel-booking-frontend/.env.local
+hotel-booking-frontend/.env.production
+hotel-booking-frontend/npm-debug.log*
+hotel-booking-frontend/yarn-debug.log*
+hotel-booking-frontend/yarn-error.log*
+hotel-booking-frontend/coverage/
+
+# IDE ignores
+.idea/
+.vscode/
+.fleet/
+*.swp
+*.swo
+*~
+
+# OS ignores
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Documentation and temporary files
+*.sql
+*.db
+*.sqlite
+.kiro/
+.claude/
+.claude-flow/
+.history/
+.swarm/
+.mcp.json
+
+# Large media files
+*.mp4
+*.tiff
+*.avi
+*.flv
+*.mov
+*.wmv
+*.zip
+
+# Logs
+*.log

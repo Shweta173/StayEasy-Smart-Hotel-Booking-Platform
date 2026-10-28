@@ -1,0 +1,419 @@
+.reviews-page {
+  padding: 40px 20px;
+  background: #f5f5f5;
+  min-height: calc(100vh - 200px);
+}
+
+.reviews-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.reviews-header h1 {
+  font-size: 32px;
+  color: #003580;
+  margin-bottom: 10px;
+}
+
+.reviews-header p {
+  font-size: 16px;
+  color: #666;
+}
+
+/* Success/Error Messages */
+.success-message,
+.error-message {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.success-message {
+  background: #d4edda;
+  border: 1px solid #c3e6cb;
+  color: #155724;
+}
+
+.error-message {
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+}
+
+.success-icon,
+.error-icon {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Form Container */
+.review-form-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.review-form {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.form-select,
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.3s;
+}
+
+.form-select:focus,
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #0071c2;
+  box-shadow: 0 0 0 3px rgba(0,113,194,0.1);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-hint {
+  display: block;
+  margin-top: 5px;
+  font-size: 12px;
+  color: #666;
+}
+
+/* Star Rating */
+.star-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.star {
+  background: none;
+  border: none;
+  font-size: 32px;
+  color: #ddd;
+  cursor: pointer;
+  transition: color 0.2s, transform 0.2s;
+  padding: 0;
+}
+
+.star:hover,
+.star.active {
+  color: #febb02;
+  transform: scale(1.1);
+}
+
+.rating-text {
+  margin-left: 10px;
+  font-size: 14px;
+  color: #666;
+  font-weight: 600;
+}
+
+/* Submit Button */
+.btn-submit {
+  width: 100%;
+  padding: 14px;
+  background: #0071c2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-submit:hover:not(:disabled) {
+  background: #005999;
+}
+
+.btn-submit:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.form-note {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 13px;
+  color: #666;
+}
+
+/* Info Sidebar */
+.review-info {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+}
+
+.review-info h3,
+.review-info h4 {
+  color: #003580;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.review-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.review-info ul li {
+  padding: 8px 0;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.review-stats {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.review-stats p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .review-form-container {
+    grid-template-columns: 1fr;
+  }
+
+  .review-info {
+    position: static;
+  }
+}
+
+@media (max-width: 576px) {
+  .reviews-page {
+    padding: 20px 10px;
+  }
+
+  .reviews-header h1 {
+    font-size: 24px;
+  }
+
+  .review-form {
+    padding: 20px;
+  }
+
+  .star {
+    font-size: 28px;
+  }
+}
+
+/* Inline Validation Errors */
+.form-select.error,
+.form-input.error,
+.form-textarea.error {
+  border-color: #dc3545;
+  background-color: #fff5f5;
+}
+
+.form-select.error:focus,
+.form-input.error:focus,
+.form-textarea.error:focus {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+}
+
+.error-message-inline {
+  display: block;
+  color: #dc3545;
+  font-size: 12px;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+.form-group {
+  position: relative;
+}
+
+/* Toast Notification */
+.toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.toast {
+  background: white;
+  padding: 16px 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 320px;
+  max-width: 400px;
+  animation: toastSlideIn 0.3s ease;
+  border-left: 4px solid;
+}
+
+@keyframes toastSlideIn {
+  from {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes toastSlideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+}
+
+.toast.hiding {
+  animation: toastSlideOut 0.3s ease forwards;
+}
+
+.toast.success {
+  border-left-color: #10b981;
+}
+
+.toast.error {
+  border-left-color: #ef4444;
+}
+
+.toast.warning {
+  border-left-color: #f59e0b;
+}
+
+.toast.info {
+  border-left-color: #3b82f6;
+}
+
+.toast-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.toast.success .toast-icon {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.toast.error .toast-icon {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.toast.warning .toast-icon {
+  background: #fef3c7;
+  color: #a16207;
+}
+
+.toast.info .toast-icon {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.toast-content {
+  flex: 1;
+}
+
+.toast-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #262626;
+  margin-bottom: 2px;
+}
+
+.toast-message {
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+.toast-close {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #f3f4f6;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  color: #6b7280;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.toast-close:hover {
+  background: #e5e7eb;
+  color: #262626;
+}
+
+/* Responsive Toast */
+@media (max-width: 576px) {
+  .toast-container {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+  }
+
+  .toast {
+    min-width: auto;
+    max-width: 100%;
+  }
+}
